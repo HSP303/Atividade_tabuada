@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <script language="JavaScript">
+        function tabuada() {
+            let num = parseInt(document.getElementById('inum').value);
+            let maxNum = parseInt(document.getElementById('maxNum').value);
+            let resultado = "";
+
+            // Loop para calcular a tabuada de 1 até maxNum
+            for (let i = 1; i <= maxNum; i++) {
+                resultado += '<h3>Tabuada do ' + num + ' até ' + i + '</h3>';
+                for (let j = 1; j <= i; j++) {
+                    resultado += num + " x " + j + " = " + (num * j);
+                    resultado += "<br>";
+                }
+            }
+
+            document.getElementById('dresultado').innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <label for="inum">Número: </label>
+    <input type="number" id="inum" value="2" step="1">
+    <br>
+    <label for="maxNum">Tabuada até o número: </label>
+    <input type="number" id="maxNum" value="10" step="1">
+    <br>
+    <button onclick="tabuada()">
+        Exibir
+    </button>
+    <br>
+    <div id="dresultado"></div>
+</body>
+</html>
